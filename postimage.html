@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="https://jpweb.ml/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Post Image</title>
 </head>
 <body>
+	<div class="banner">
+		<h1 id="bannerid">Our Furry Friends: Cats</h1>
+		<p id="pbannerid">Learn and Share About Your Cat Today!</p>
+	</div>
 
-	<ul>
-		<li><a href="index.html">Home Page</a></li>
-		<li><a href="login.html">Login</a></li>
-		<li><a href="registration.html">Registration</a></li>
-		<li><a href="viewpost.html">View Post</a></li>
-	</ul>
+	<div class="navbar" >
+		
+		<a href="index.html">Home Page</a>
+		<a href="login.html">Login</a>
+		<a href="registration.html">Registration</a>
+		<a href="postimage.html" class="active">Post Image</a>
+		<a href="viewpost.html">View Post</a>
+		
+	</div>
 
-	<section>
+	<br>
+
+	<div class="postimagebox">
 		<h2>Post Image</h2>
 		<form>
 			<label for="title">Title:</label>
@@ -23,8 +34,8 @@
 			<br><br>
 
 			<label for="description">Description:</label>
-			<input type="text" name="description">
-
+			<textarea id="descbox" name="description"></textarea> 
+			
 			<br><br>
 
 			<label for="upload">Upload:</label>
@@ -33,13 +44,14 @@
 			<br><br>
 
 			<input type="checkbox" name="up">
-			<label for="up">By checking this, you accept the <a href="up.html">use policy</a> agreement.</label>
-
-			<br><br>
+			<label class="confirmation" for="up">By checking this, you accept the <a href="up.html">use policy</a> agreement.</label>
 
 			<input type="submit" name="submit" value="Submit">
 		</form>
-	</section>
-	
+	</div>
+
+	<footer class="footer">
+		<h4>By: Ashley Ching</h4>
+	</footer>
 </body>
 </html>

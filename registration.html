@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="https://jpweb.ml/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Registration</title>
 </head>
 <body>
+	<div class="banner">
+		<h1 id="bannerid">Our Furry Friends: Cats</h1>
+		<p id="pbannerid">Learn and Share About Your Cat Today!</p>
+	</div>
 
-	<ul>
-		<li><a href="index.html">Home Page</a></li>
-		<li><a href="login.html">Login</a></li>
-		<li><a href="postimage.html">Post Image</a></li>
-		<li><a href="viewpost.html">View Post</a></li>
-	</ul>
-	<section>
+	<div class="navbar" >
+		
+		<a href="index.html">Home Page</a>
+		<a href="login.html">Login</a>
+		<a href="registration.html" class="active">Registration</a>
+		<a href="postimage.html">Post Image</a>
+		<a href="viewpost.html">View Post</a>
+		
+	</div>
+
+	<br>
+
+	<div class="centerbox_reg">
 		<h2>Registration</h2>
 		<form>
 			<label for="username">Username:</label>
@@ -22,27 +34,29 @@
 			<br><br>
 
 			<label for="email">Email:</label>
-			<input type="email" name="email">
+			<input type="text" type="email" name="email">
 			
 			<br><br>
 
 			<label for="password">Password:</label>
-			<input type="password" name="password">
+			<input type="text" type="password" name="password">
 			
 			<br><br>
 
 			<label for="confirm_password">Confirm Password:</label>
-			<input type="password" name="confirm_password">
+			<input type="text" type="password" name="confirm_password">
 			
 			<br><br>
 
 			<input type="checkbox" name="13+">
-			<label for="13+">By checking this, I agree that I am at least 13 years old and have read and agree to the <a href="tos.html">TOS</a> and <a href="pr.html">Privacy Rules</a>.</label>
-			
-			<br><br>
+			<label class="confirmation" for="13+">By checking this, I agree that I am at least 13 years old and have read and agree to the <a href="tos.html">TOS</a> and <a href="pr.html">Privacy Rules</a>.</label>
 
 			<input type="submit" name="submit" value="Create Account">
 		</form>
-	</section>
+	</div>
+
+	<footer class="footer">
+		<h4>By: Ashley Ching</h4>
+	</footer>
 </body>
 </html>

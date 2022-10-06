@@ -1,0 +1,224 @@
+
+body{
+	background-color: #f9d5e5; 
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-family: fantasy;
+}
+
+@media only screen and (max-width: 600px) {
+	.card{   
+		width: 100%;
+		padding-right: 20px;
+	}
+	.rightcolumn{
+		width: 100%;
+		padding-right: 20px;
+	}
+	.leftcolumn{
+		width: 100%;
+		padding-right: 20px;
+	}
+}
+@media only screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* Navigation Bar */
+
+.navbar {
+  	background-color: #ddd;
+  	overflow: hidden;
+  	padding: 10px 5px;
+  	position: sticky;
+ }
+
+.navbar a {
+  	float: middle;
+  	color: #FE828C;
+  	text-align: center;
+  	padding: 10px 10px;
+  	width: 100px;
+  	height: 100px;
+  	text-decoration: underline;
+  	overflow: hidden;
+}
+
+.navbar a:hover {
+  	background-color: whitesmoke;
+  	color: #ca4e59;
+}
+
+.active{
+	background-color: lightgray;
+}
+
+/* Banner */
+.banner {
+  	width: 100%;
+  	padding:10px 0;
+  	text-align: center;
+  	background: #72dcdc;
+  	color: #ed7781;
+  	font-family: Verdana, Lato;
+}
+
+#bannerid {
+  	font-size: 3.5em;
+  	padding: 0px;
+ 	font-weight: 700;
+ 	font-family: Papyrus, fantasy;
+}
+#pbannerid{
+	font-size: 1.5em;
+  	padding: 0px;
+  	font-weight: 400;
+  	font-family: fantasy;
+ }
+
+/* Card Effect */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  min-height: 100px;
+}
+
+/* Left column - home page*/
+.leftcolumn {   
+  float: left;
+  width: 65%;
+}
+
+/* Right column - home page*/
+.rightcolumn {
+  float: right;
+  width: 33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Images */
+img{
+	width: 95%;
+	height: auto;
+	padding: 5px;
+}
+
+/* MISC */
+.tab{
+	text-indent: 40px;
+}
+.confirmation{
+	font-size: 12px;
+}
+
+/* Submission */
+input[type=text], select, textarea {
+	width: 50%;
+	max-width: 200px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+	vertical-align: text-top;
+ }
+input[type=submit] {
+	background-color: #ca4e59;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	margin-top: 30px;
+}
+input[type=submit]:hover {
+	background-color: pink;
+}
+
+
+/* Footer */
+.footer {
+	padding: 5px;
+	text-align: center;
+	background: #ddd;
+	margin-top: 20px;
+}
+#footerparagraph{
+	font-size: 10px;
+	list-style-type: none;
+}
+
+/* Aligned Boxes */
+.centerbox{
+	border-radius: 5px;
+	border-style: solid;
+	border-color: lightseagreen;
+	background-color: #dbdbdb;
+	padding: 20px 50px;
+	margin-top: 30px;
+	height: 230px;
+	max-width: 500px;
+	margin: auto;
+	
+}
+.centerbox_reg{
+	border-radius: 5px;
+	border-style: solid;
+	border-color: lightseagreen;
+	background-color: #dbdbdb;
+	padding: 20px 50px;
+	margin-top: 30px;
+	height: 390px;
+	max-width: 500px;
+	margin: auto;
+}
+.postimagebox{
+	border-radius: 5px;
+	border-style: solid;
+	border-color: lightseagreen;
+	background-color: #dbdbdb;
+	padding: 20px 50px;
+	margin-top: 30px;
+	height: 350px;
+	max-width: 500px;
+	margin: auto;
+}
+#descbox{
+	max-width: 300px;
+	height: 50px;
+	vertical-align: text-top; 
+}
+
+/* View Post*/
+.viewpostbox{
+	border-radius: 5px;
+	border-style: solid;
+	border-color: lightseagreen;
+	background-color: floralwhite;
+	padding: 20px 50px;
+	margin-top: 30px;
+	height: 700px;
+	width: 700px;
+	margin: auto;
+}
+.datecreatedpar{
+	font-size: 10px;
+	float: right;
+	padding-right: 35px;
+}
+
+
+
+

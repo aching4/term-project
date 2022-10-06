@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="https://jpweb.ml/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
 </head>
 <body>
+	<div class="banner">
+		<h1 id="bannerid">Our Furry Friends: Cats</h1>
+		<p id="pbannerid">Learn and Share About Your Cat Today!</p>
+	</div>
 
-	<ul>
-		<li><a href="index.html">Home Page</a></li>
-		<li><a href="registration.html">Registration</a></li>
-		<li><a href="postimage.html">Post Image</a></li>
-		<li><a href="viewpost.html">View Post</a></li>
-	</ul>
+	<div class="navbar" >
+		
+		<a href="index.html">Home Page</a>
+		<a href="login.html" class="active">Login</a>
+		<a href="registration.html">Registration</a>
+		<a href="postimage.html">Post Image</a>
+		<a href="viewpost.html">View Post</a>
+		
+	</div>
 
-	<section>
+	<br>
+
+	<div class="centerbox">
 	
 	<h2>Login</h2>
 		
@@ -22,17 +33,21 @@
 			<label for="username">Username:</label>
 			<input type="text" name="username">
 			
-			<br>
+			<br><br>
 
-			<label for="password">Password:</label>
-			<input type="password" name="password">
+			<label for="password">Password: </label>
+			<input type="text" type="password" name="password">
 			
 			<br>
 
 			<input type="submit" name="submit" value="Login">
 		</form>
 
-	</section>
+	</div>
+
+	<footer class="footer">
+		<h4>By: Ashley Ching</h4>
+	</footer>
 
 </body>
 </html>
