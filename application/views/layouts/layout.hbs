@@ -4,8 +4,17 @@
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
     <link rel='stylesheet' href='/public/css/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
+    {{> banner}}
+    {{> nav}}
     {{{body}}}
+    <script defer type="text/javascript" src="/public/js/active.js"></script>
+
+    {{> footer}}
+
   </body>
 </html>
