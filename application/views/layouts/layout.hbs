@@ -6,15 +6,21 @@
     <link rel='stylesheet' href='/public/css/style.css' />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer type="text/javascript" src="/public/js/active.js"></script>
+    {{#if isLoggedIn}}
+      <script defer type="text/javascript" src="public/js/logout.js"></script>
+    {{/if}}
+    {{#each js}}
+      <script defer type="text/javascript" src="/public/js/{{this}}.js"></script>
+    {{/each}}
   </head>
-
   <body>
+    {{#if (nonEmptyObject messages)}}
+      {{> flashmessage}}
+    {{/if}}
     {{> banner}}
     {{> nav}}
     {{{body}}}
-    <script defer type="text/javascript" src="/public/js/active.js"></script>
-
     {{> footer}}
-
   </body>
 </html>

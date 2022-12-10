@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    function setValidity(event, condition, error) {
+    function setValidity(event, pack) {
 		const val = event.target.value;
 
 		if (!val.length) {
@@ -9,11 +9,11 @@
 			return;
 		}
 
-		for (var i = 0; i < condition.length; i++) {
-		    if (condition[i]) {
+		for (var i = 0; i < pack.length; i++) {
+		    if (pack[i][0]) {
 		        event.target.setCustomValidity('');
 		    } else {
-		        event.target.setCustomValidity(error[i] || 'Something is wrong in this field.');
+		        event.target.setCustomValidity(pack[i][1] || 'Something is wrong in this field.');
 		        return;
 		    }
 		}
@@ -38,7 +38,7 @@
 	}
 
 	function startWithChar(str) {
-		return str.length && ([...str[0].matchAll(lowers)].length || [...str[0].matchAll(uppers)].length);
+		return [...str[0].matchAll(lowers)].length || [...str[0].matchAll(uppers)].length;
 	}
 
 	function matchPass(pass1, pass2) {
@@ -54,27 +54,42 @@
 		const cpassword = document.getElementById('confirm_password');
 
 		// submit form
-		form.addEventListener('submit', function(event) {
-			event.preventDefault();
-			alert('Success! Your account has been created.');
-			window.location.reload();
-		});
+		// form.addEventListener('submit', function(event) {
+		// 	event.preventDefault();
+			// alert('Success! Your account has been created.');
+			// window.location.reload();
+		// });
 
 		// set validation conditions
 		username.addEventListener('input', function(event) {
-			setValidity(event, [startWithChar(username.value), containsGroup(username.value, 3, lowers, uppers, numbers)],
-				['Username must start with a letter.', 'Username must contain at least 3 character.']);
+			setValidity(
+				event,
+				[
+					[startWithChar(username.value), 'Username must start with a letter.'],
+					[containsGroup(username.value, 3, lowers, uppers, numbers), 'Username must contain at least 3 character.']
+				]
+			);
 		});
 
 		password.addEventListener('input', function(event) {
-			setValidity(event, [containsGroup(password.value, 8, lowers, uppers), containsGroup(password.value, 1, uppers),
-				containsGroup(password.value, 1, numbers), containsGroup(password.value, 1, specials)],
-				['Password must be at least 8 letters long.', 'Password must contain at least 1 upper case letter.',
-				'Password must contain at least 1 number.', 'Password must contain at least 1 special character']);
+			setValidity(
+				event,
+				[
+					[containsGroup(password.value, 8, lowers, uppers, numbers, specials), 'Password must be at least 8 characters long.'],
+					[containsGroup(password.value, 1, uppers), 'Password must contain at least 1 upper case letter.'],
+					[containsGroup(password.value, 1, numbers), 'Password must contain at least 1 number.'],
+					[containsGroup(password.value, 1, specials), 'Password must contain at least 1 special character']
+				]
+			);
 		});
 
 		cpassword.addEventListener('input', function(event) {
-			setValidity(event, [matchPass(password.value, cpassword.value)], ['Passwords must match.']);
+			setValidity(
+				event,
+				[
+					[matchPass(password.value, cpassword.value), 'Passwords must match.']
+				]
+			);
 		});
 	}
 

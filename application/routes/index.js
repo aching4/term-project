@@ -1,28 +1,29 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const {isLoggedIn} = require('../middleware/protectors');
+const router = express.Router();
 
 /* GET home page. */
 /*router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CSC 317 App', name:"Ashley Ching" });
+  res.render('index', { title: 'CSC 317 App', name:'Ashley Ching' });
 });*/
 
-router.get("/", function(req, res){
-  res.render("index", {title: 'Home Page'});
+router.get('/', function(req, res){
+  res.render('index', {title: 'Home Page', js: ['photos']});
 });
 
-router.get("/login", function(req, res){
+router.get('/login', function(req, res){
   res.render('login', {title: 'Login'});
 });
 
-router.get("/registration", function(req, res){
-  res.render('registration', {title: 'Registration'});
+router.get('/registration', function(req, res){
+  res.render('registration', {title: 'Registration', js: ['registration']});
 });
 
-router.get("/postimage", function(req, res){
+router.get('/postimage', isLoggedIn, function(req, res){
   res.render('postimage', {title: 'Post Image'});
 });
 
-router.get("/viewpost", function(req, res){
+router.get('/viewpost', function(req, res){
   res.render('viewpost', {title: 'View Post'});
 });
 

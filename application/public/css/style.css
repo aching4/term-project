@@ -1,4 +1,3 @@
-
 body{
 	background-color: #f9d5e5; 
 	padding-left: 30px;
@@ -32,30 +31,34 @@ body{
 /* Navigation Bar */
 
 .navbar {
-  	background-color: #ddd;
-  	overflow: hidden;
-  	padding: 10px 5px;
-  	position: sticky;
+	background-color: #ddd;
+	overflow: hidden;
+	padding: 10px 5px;
+	position: sticky;
  }
 
 .navbar a {
-  	float: middle;
-  	color: #FE828C;
-  	text-align: center;
-  	padding: 10px 10px;
-  	width: 100px;
-  	height: 100px;
-  	text-decoration: underline;
-  	overflow: hidden;
+	float: middle;
+	color: #FE828C;
+	text-align: center;
+	padding: 10px 10px;
+	width: 100px;
+	height: 100px;
+	text-decoration: underline;
+	overflow: hidden;
 }
 
 .navbar a:hover {
-  	background-color: whitesmoke;
-  	color: #ca4e59;
+	background-color: whitesmoke;
+	color: #ca4e59;
 }
 
 .active{
 	background-color: lightgray;
+}
+
+#logout-button {
+	cursor: pointer;
 }
 
 /* Banner */
@@ -125,6 +128,14 @@ img {
 }
 .photos {
 	margin-top: 25px;
+}
+.fade {
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+.counter {
+	clear: both;
 }
 
 /* MISC */
@@ -208,7 +219,7 @@ input[type=submit]:hover {
 	max-width: 500px;
 	margin: auto;
 }
-#descbox{
+#description{
 	max-width: 300px;
 	height: 50px;
 	vertical-align: text-top; 
@@ -230,4 +241,45 @@ input[type=submit]:hover {
 	font-size: 10px;
 	float: right;
 	padding-right: 35px;
+}
+
+/* Alert */
+.alert {
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-delay: 4s;
+	animation-fill-mode: forwards;
+	position: absolute;
+	width: 35%;
+	text-align: center;
+	left: 50%;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px 0;
+	margin-left: -15%;
+	margin-top: 5px;
+	border-radius: 4px;
+	font-family: Arial, Helvetica, sans-serif;;
+}
+.alert-danger {
+	color: darkred;
+	border-color: darkred;
+	background-color: #f8d7da;
+}
+.alert-success {
+	color: darkgreen;
+	border-color: darkgreen;
+	background-color: #d4edda;
+}
+
+/* Animation */
+@keyframes fade {
+	from {
+		opacity: 1;
+		display: block;
+	}
+	to {
+		opacity: 0;
+		display: none;
+	}
 }

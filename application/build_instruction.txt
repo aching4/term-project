@@ -1,0 +1,4 @@
+npm install
+npm audit fix --force
+npm run builddb
+npm install bcrypt express-session express-mysql-session express-flash multer sharp

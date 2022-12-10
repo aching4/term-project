@@ -4,25 +4,25 @@
 
 <div class="postimagebox">
 	<h2>Post Image</h2>
-	<form>
+	<form action="/posts/create" method="POST" enctype="multipart/form-data">
 		<label for="title">Title:</label>
-		<input type="text" name="title">
+		<input type="text" id="title">
 
 		<br><br>
 
 		<label for="description">Description:</label>
-		<textarea id="descbox" name="description"></textarea> 
+		<textarea id="description"></textarea> 
 		
 		<br><br>
 
 		<label for="upload">Upload:</label>
-		<input type="file" name="upload">
+		<input type="file" id="upload" name="upload">
 
 		<br><br>
 
-		<input type="checkbox" name="up">
+		<input type="checkbox" id="up">
 		<label class="confirmation" for="up">By checking this, you accept the <a href="up.html">use policy</a> agreement.</label>
 
-		<input type="submit" name="submit" value="Submit">
+		<input type="submit" value="Submit">
 	</form>
 </div>
