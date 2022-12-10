@@ -1,0 +1,13 @@
+<div class="navbar" >
+
+	<a href="/">Home Page</a>
+	{{#if isLoggedIn}}
+		<a id="logout-button">Log Out</a>
+	{{else}}
+		<a href="/login">Login</a>
+		<a href="/registration">Registration</a>
+	{{/if}}
+	<a href="/postimage">Post Image</a>
+	<a href="/viewpost">View Post</a>
+		
+</div>

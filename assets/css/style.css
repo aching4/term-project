@@ -109,10 +109,22 @@ body{
 }
 
 /* Images */
-img{
+img {
 	width: 95%;
 	height: auto;
 	padding: 5px;
+}	
+.photos img {
+	width: 100%;
+	display: block;
+	padding: 0px;
+}
+.photos div {
+	width: 33.3333%;
+	float: left;
+}
+.photos {
+	margin-top: 25px;
 }
 
 /* MISC */
@@ -150,6 +162,7 @@ input[type=submit]:hover {
 
 /* Footer */
 .footer {
+	clear: both;
 	padding: 5px;
 	text-align: center;
 	background: #ddd;
@@ -218,7 +231,3 @@ input[type=submit]:hover {
 	float: right;
 	padding-right: 35px;
 }
-
-
-
-
