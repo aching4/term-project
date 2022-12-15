@@ -8,6 +8,10 @@
 		<a href="/registration">Registration</a>
 	{{/if}}
 	<a href="/postimage">Post Image</a>
-	<a href="/viewpost">View Post</a>
+
+	<form action="/posts/search" method="GET" enctype="application/x-www-form-urlencoded">
+		<input type="submit" value="🔍" id="search-submit">
+		<input type="text" name="searchTerm" id="search-text" value="{{searchValue}}">
+	</form>
 		
 </div>

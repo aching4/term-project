@@ -23,23 +23,27 @@ router.post('/registration', function(req, res, next){
       } else {
         throw new Error('username already exists');
       }
-    }).then(function([results, fields]) {
+    })
+    .then(function([results, fields]) {
       if (results && results.length == 0) {
       // hashbrowns and salt
         return bcrypt.hash(password, 2);
       } else {
         throw new Error('email already exists');
       }
-    }).then(function(hashedPassword) {
+    })
+    .then(function(hashedPassword) {
       // insert into database
       return db.query('INSERT INTO users (username, email, password) VALUE (?, ?, ?)', [username, email, hashedPassword]);
-    }).then(function([results, fields]) {
+    })
+    .then(function([results, fields]) {
       if (results && results.affectedRows == 1) {
         res.redirect('/login');
       } else {
         throw new Error('user could not be made');
       }
-    }).catch(function(err) {
+    })
+    .catch(function(err) {
       res.redirect('/registration');
       next(err);
     });
@@ -61,7 +65,8 @@ router.post('/login', function(req, res, next){
         } else {
           throw new UserError('Failed login: Invalid user credentials', '/login', 200);
         }
-    }).then(function(passwordsMatched) {
+    })
+    .then(function(passwordsMatched) {
       if (passwordsMatched) {
         req.session.userId = loggedUserId;
         req.session.username = loggedUsername;
@@ -72,7 +77,8 @@ router.post('/login', function(req, res, next){
       } else {
         throw new UserError('Failed login: Invalid user credentials', '/login', 200);
       }
-    }).catch(function(err) {
+    })
+    .catch(function(err) {
       if (err instanceof UserError) {
         req.flash('error', err.getMessage());
         req.session.save(function(saveErr) {

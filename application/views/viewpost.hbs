@@ -1,17 +1,36 @@
 <br>
 
 <div class="viewpostbox">
-	<h2><b><u>Cute Kitten</u></b></h2>
-	<p class="datecreatedpar">Date Created: 09/23/2022 4:15PM</p>
-	<img src="/public/img/cat2.png" alt="kitten2">
-	<h4 class="tab">Mittens, a white and brown furred cat, is poking her head out of fluffy white blankets.</h4>
+	{{#if notFound}}
+		<h1>404 Not Found</h1>
+	{{else}}
+	<h2><b><u>{{currentPost.title}}</u></b></h2>
+	<p class="datecreatedpar">Date Created: {{formatDate currentPost.createdAt}}</p>
+	<img src="/{{currentPost.image}}">
+	<h4 class="tab">{{currentPost.description}}</h4>
+	<p>{{currentPost.username}}</p>
 </div>
 
 <br>
 
 <div class="viewpostbox">
-	<h2><b><u>Curious Kitten</u></b></h2>
-	<p class="datecreatedpar">Date Created: 10/05/2022 10:32AM</p>
-	<img src="/public/img/cat3.png" alt="kitten2">
-	<h4 class="tab">Pumpkin, a orange and white striped cat, is walking towards the camera with lots of curiousity.</h4>
+	{{#if isLoggedIn}}
+	<div>
+		<input type="text" name="comment" id="comment"></input>
+		<input type="submit" name="commit" id="commit" data-postid="{{currentPost.id}}">
+	</div>
+	{{/if}}
+
+	<div id="comments">
+	{{#each currentPost.comments}}
+		<div>
+			<p class="comment-username">@{{this.username}}</p>
+			<p class="comment-postdate">{{formatDate this.createdAt}}</p>
+			<p class="comment-texttext">{{this.text}}</p>
+		</div>
+	{{/each}}
+	</div>
+	{{/if}}
 </div>
+
+<script defer type="text/javascript" src="/public/js/comments.js"></script>

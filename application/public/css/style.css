@@ -38,7 +38,6 @@ body{
  }
 
 .navbar a {
-	float: middle;
 	color: #FE828C;
 	text-align: center;
 	padding: 10px 10px;
@@ -53,10 +52,23 @@ body{
 	color: #ca4e59;
 }
 
+.navbar form {
+	float: right;
+}
+
+.navbar input {
+	float: right;
+	margin-left: 5px;
+	margin-top: 0px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+#search-submit {
+	background-color: darkgray;
+}
 .active{
 	background-color: lightgray;
 }
-
 #logout-button {
 	cursor: pointer;
 }
@@ -118,13 +130,16 @@ img {
 	padding: 5px;
 }	
 .photos img {
-	width: 100%;
+	width: 50%;
+	margin: 0 auto;
 	display: block;
 	padding: 0px;
+
 }
 .photos div {
-	width: 33.3333%;
+	width: calc(100% / 3);
 	float: left;
+	text-align: center;
 }
 .photos {
 	margin-top: 25px;
@@ -153,7 +168,7 @@ input[type=text], select, textarea {
 	padding: 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	resize: vertical;
+	resize: none;
 	vertical-align: text-top;
  }
 input[type=submit] {
@@ -233,14 +248,49 @@ input[type=submit]:hover {
 	background-color: floralwhite;
 	padding: 20px 50px;
 	margin-top: 30px;
-	height: 700px;
-	width: 700px;
+	width: 50%;
 	margin: auto;
+}
+.viewpostbox h2 {
+	float: left;
 }
 .datecreatedpar{
 	font-size: 10px;
 	float: right;
 	padding-right: 35px;
+}
+.viewpostbox img {
+	clear: both;
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Comments */
+#commit {
+	float: left;
+	margin-top: 0px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+#comment {
+	width: calc(100% - 110px);
+	margin-right: 10px;
+	max-width: none;
+	float: left;
+}
+.viewpostbox div {
+	overflow: auto;
+	margin: 0 auto;
+}
+.comment-username {
+	float: left;
+}
+.comment-postdate {
+	float: right;
+}
+.comment-texttext {
+	clear: both;
 }
 
 /* Alert */
@@ -250,16 +300,15 @@ input[type=submit]:hover {
 	animation-delay: 4s;
 	animation-fill-mode: forwards;
 	position: absolute;
-	width: 35%;
 	text-align: center;
 	left: 50%;
 	border-width: 1px;
 	border-style: solid;
-	padding: 10px 0;
-	margin-left: -15%;
+	padding: 10px;
 	margin-top: 5px;
 	border-radius: 4px;
 	font-family: Arial, Helvetica, sans-serif;;
+	transform: translate(-50%);
 }
 .alert-danger {
 	color: darkred;
@@ -282,4 +331,20 @@ input[type=submit]:hover {
 		opacity: 0;
 		display: none;
 	}
+}
+
+/* Scroll bar (Chrome Only (I think)) */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 5px;
+	background-color: #72dcdc;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 2.5px;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.3);
 }

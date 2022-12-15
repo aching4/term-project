@@ -19,9 +19,10 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. npm install
+2. npm audit fix --force
+3. npm run builddb
+4. npm install bcrypt express-session express-mysql-session express-flash multer sharp
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. npm start

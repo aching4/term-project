@@ -11,7 +11,8 @@ const flash = require('express-flash');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const postsRouter = require('./routes/posts')
+const postsRouter = require('./routes/posts');
+const commentsRouter = require('./routes/comments');
 
 const app = express();
 
@@ -25,6 +26,9 @@ app.engine(
     helpers: {
       nonEmptyObject: function(obj) {
         return !(obj && obj.constructor === Object && Object.keys(obj).length == 0);
+      },
+      formatDate: function(dateString) {
+        return new Date(dateString).toLocaleString();
       }
     }, //adding new helpers to handlebars for extra functionality
   })
@@ -56,7 +60,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-  console.log(req.session);
+  // console.log(req.session);
   if (req.session.username) {
     res.locals.isLoggedIn = true;
     res.locals.username = req.session.username;
@@ -67,6 +71,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter); // route middleware from ./routes/index.js
 app.use('/users', usersRouter); // route middleware from ./routes/users.js
 app.use('/posts', postsRouter); // route middleware from ./routes/posts.js
+app.use('/comments', commentsRouter); // route middleware from ./routes/comments.js
 
 
 /**

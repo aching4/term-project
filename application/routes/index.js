@@ -1,5 +1,6 @@
 const express = require('express');
 const {isLoggedIn} = require('../middleware/protectors');
+const {getRecentPosts, getPostById, getCommentsForPostById} = require('../middleware/posts');
 const router = express.Router();
 
 /* GET home page. */
@@ -7,7 +8,7 @@ const router = express.Router();
   res.render('index', { title: 'CSC 317 App', name:'Ashley Ching' });
 });*/
 
-router.get('/', function(req, res){
+router.get('/', getRecentPosts, function(req, res){
   res.render('index', {title: 'Home Page', js: ['photos']});
 });
 
@@ -23,10 +24,8 @@ router.get('/postimage', isLoggedIn, function(req, res){
   res.render('postimage', {title: 'Post Image'});
 });
 
-router.get('/viewpost', function(req, res){
+router.get('/posts/:id(\\d+)', getPostById, getCommentsForPostById, function(req, res){
   res.render('viewpost', {title: 'View Post'});
 });
-
-
 
 module.exports = router;
